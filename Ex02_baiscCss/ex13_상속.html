@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html{
+      font-size: 14px;
+    }
+    body{}
+    .container{
+      color: red;
+      border: 1px solid black;
+    }
+
+    .inner-box{
+      border: 1px solid blue;
+    }
+
+    p{
+      border: 1px solid pink;
+      font-size: 2em;
+    }
+    .test{
+      line-height: 1.8;
+      letter-spacing: 0.1rem;
+    }
+    * {
+      color: red;
+    }
+    div {
+      color: yellow;
+    }
+    .text-class {
+      color : rgb(251,241,17);
+      /* 1은 불투명 ~ 0에 가까울수록 투명 */
+      /* opacity: 0.22; */
+    }
+    #text-id {
+                          /* 알파값 : opacity */
+      color :rgba(251, 239, 17, 1) !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    바깥에 있는 박스입니다.
+    <div class="inner-box">
+      <p>안쪽에 있는 박스 입니다.</p>
+      <p class="test">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, rerum?</p>
+    </div>
+  </div>
+
+  <div class="box1" style="background-color: cadetblue;">
+    안녕하세요
+  </div>
+  <div class="text-class" id="text-id">
+    텍스트 입니다.
+  </div>
+</body>
+</html>

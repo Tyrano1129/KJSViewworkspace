@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+      height: 100vh;
+    }
+    .container{
+      /* border: 3px solid black; */
+      display: flex;
+      /* 컬럼일때 자식요소 flex:1 너비값이 아니라 높이 값을줄수있다. */
+      flex-direction: column;
+      height: 100vh;
+    }
+    header{
+      /* border: 3px solid rgb(16, 12, 223); */
+      flex: 1;
+      background-color: brown;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    section{
+      /* border: 3px solid rgb(143, 219, 20); */
+      flex: 7;
+      display: flex;
+    }
+    section article{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    section .left{
+      /* 부모가 가로 정렬일때 flex 너비 */
+      flex: 1;
+      background-color: yellow;
+    }
+    section .main{
+      flex: 3;
+      background-color: gray;
+      padding: 0 10px;
+    }
+    section .right{
+      flex: 1;
+      background-color: greenyellow;
+    }
+    footer{
+      /* border: 3px solid rgb(12, 54, 194); */
+      flex: 1;
+      background-color: aqua;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @media(max-width:768px){
+      section{
+        flex-direction: column;
+      }
+      section .main{
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>header</header>
+    <section>
+      <article class="left">left</article>
+      <article class="main">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Repellat eius, voluptatum ipsam earum tempore iure odio itaque! 
+        Delectus expedita architecto ea vero veritatis quidem voluptatum 
+        praesentium, assumenda sit esse eligendi.
+      </article>
+      <article class="right">right</article>
+    </section>
+    <footer>footer</footer>
+  </div>
+</body>
+</html>

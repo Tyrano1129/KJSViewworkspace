@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      /* align-items는 사이즈가 자식값으로 */
+      justify-content: center;
+      align-items: center;
+    }
+    section{
+      display: flex;
+    }
+    article{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    section:nth-child(2){
+      display: flex;
+    }
+    .sub1{
+      flex: 1;
+      background-color: greenyellow;
+      padding: 20px;
+    }
+    .sub2{
+      flex: 1;
+      background-color: brown;
+      padding: 20px;
+    }
+    .content1{
+      background-color: yellow;
+      padding: 20px;
+    }
+    @media(max-width:768px){
+      body{
+        align-items: flex-end;
+      }
+      section{
+        width: 100%;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <article>
+      <div class="content1">
+      <h2>content1</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate harum porro nostrum 
+        inventore vitae id dignissimos eligendi magnam. 
+        Repellat, assumenda ullam. Dolores minus, 
+        sed vel corrupti nemo numquam ullam iure.ipsum dolor sit amet consectetur adipisicing elit. Cupiditate harum porro nostrum 
+        inventore vitae id dignissimos eligendi magnam. 
+        Repellat, assumenda ullam. Dolores minus, 
+        sed vel corrupti nemo numquam ullam iure.ipsum dolor sit amet consectetur adipisicing elit. Cupiditate harum porro nostrum 
+        inventore vitae id dignissimos eligendi magnam. 
+        Repellat, assumenda ullam. Dolores minus, 
+        sed vel corrupti nemo numquam ullam iure.ipsum dolor sit amet consectetur adipisicing elit. Cupiditate harum porro nostrum 
+        inventore vitae id dignissimos eligendi magnam. 
+        Repellat, assumenda ullam. Dolores minus, 
+        sed vel corrupti nemo numquam ullam iure.</p>
+      </article>
+    </article>
+    <article>
+      <div class="sub1">
+      <h2>sub1</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione, quas 
+        voluptatem rem voluptate laboriosam nisi et, aut quia in
+          exercitationem enim eos earum perferendis neque
+          assumenda sunt! Velit, quasi quas?</p>
+    </div>
+    <div class="sub2">
+      <h2>sub2</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam accusantium quidem tempore 
+        aspernatur mollitia reprehenderit. Tenetur 
+        laboriosam facilis excepturi dolore consequatur veniam iste, 
+        deserunt modi optio, at officiis cum cumque?</p>
+    </div>
+   </article>
+  </section>
+</body>
+</html>

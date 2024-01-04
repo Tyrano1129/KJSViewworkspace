@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .test{
+      display: flex;
+      border: 1px solid black;
+    }
+    .parent{
+      flex: 1;
+      border: 3px solid rgb(248, 5, 5);
+      display: flex;
+    }
+    .parent div{
+      height: 200px;
+    }
+    .parent>:nth-child(1){
+      flex: 1;
+      background-color: yellow;
+    }
+    .parent>:nth-child(2){
+      flex: 1;
+      background-color: yellowgreen;
+    }
+    @media(max-width:768px){
+      .test{
+        width: 100%;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="test">
+  <div class="parent">
+    <div></div>
+    <div></div>
+  </div>
+  <div class="parent">
+    <div></div>
+    <div></div>
+  </div>
+  <div class="parent">
+    <div></div>
+    <div></div>
+  </div>
+</div>
+</body>
+</html>
