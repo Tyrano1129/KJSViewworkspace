@@ -1,0 +1,110 @@
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:300,400,500,700,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+/* reset CSS */
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{margin: 0; font-weight: normal;}
+button{cursor: pointer; outline: none; border: none;}
+input,textarea,select{
+  outline: none;
+}
+
+body{
+  margin: 0;
+  height: 100vh;
+  /* font-family: 'Noto Sans KR', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+}
+button,input,textarea,select{
+  /* font-family: 'Noto Sans KR', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+}
+
+section{
+  display: flex;
+  width: 1000px;
+  margin: auto;
+}
+.result{
+  display: flex;
+}
+/* 홀수 짝수 플레스 */
+.result:nth-child(odd){
+  flex-direction: column;
+}
+.result:nth-child(even){
+  flex-direction: column-reverse;
+}
+.result main{
+  background-color: rgb(36, 198, 198);
+  color: #fff;
+  height: 250px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.result .image{
+  width: 250px;
+  overflow: hidden;
+}
+/* img 인라인 블럭 -> 차제적으로 마진이 있다.*/
+.image img{
+  width: 100%;
+  display: block;
+  transition: 0.5s;
+}
+.image img:hover{
+  transform: scale(1.1);
+}
+main p{
+  padding: 20px;
+}
+main h2{
+  font-weight: 600;
+}
+
+@media screen and (min-width:786px) and (max-width:1024px){
+  section{
+    width: 100%;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  .result .image, .result main{
+    flex: 1;
+    height: 100%;
+  }
+  .result:nth-child(odd){
+    flex-direction: row;
+  }
+  .result:nth-child(even){
+    flex-direction: row-reverse;
+  }
+}
+@media(max-width:785px){
+  section{
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+  }
+  .result .image, .result main{
+    height: 100%;
+    width: 100%;
+    flex: 1;
+  }
+  .image img{
+    width: 100%;
+    height: 100%;
+  }
+  .result:nth-child(odd){
+    flex-direction: column;
+  }
+  .result:nth-child(even){
+    flex-direction: column;
+  }
+
+}

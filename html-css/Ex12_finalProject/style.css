@@ -1,0 +1,526 @@
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:300,400,500,700,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+/* reset CSS */
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  /* font-family: 'Noto Sans KR', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5em;
+}
+
+button,
+input,
+textarea,
+select {
+  /* font-family: 'Noto Sans KR', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* common CSS */
+.inner {
+  width: 1300px;
+  margin: auto;
+}
+
+.container {
+  height: 100%;
+}
+
+/* header CSS */
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+header.active {
+  background-color: white;
+}
+
+header.active .banner {
+  height: 0;
+  visibility: hidden;
+}
+
+header.active nav a {
+  color: black;
+}
+
+.banner {
+  background-color: black;
+  height: 40px;
+}
+
+.lnb {
+  margin: auto;
+  width: 100%;
+  text-align: end;
+  line-height: 40px;
+}
+
+.lnb a {
+  color: #fff;
+  margin: 10px;
+}
+
+.lnb a:last-child {
+  margin-right: 0;
+}
+
+
+.lnb a em {}
+
+nav {
+  margin: auto;
+  width: 100%;
+  /* background-color: #b9b8b8f0; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.gnb {
+  display: flex;
+}
+
+.gnb li {
+  margin: 10px;
+}
+
+.gnb li a {
+  color: #fff;
+}
+
+.gnb li a:last-child {
+  margin-right: 0;
+}
+
+.gnb li a:hover {
+  color: #222;
+}
+
+/* intro */
+.intro {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  background: url('./images/intro.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.heading {
+  text-align: center;
+  color: #fff;
+}
+
+.heading h1 {
+  font-size: 56px;
+  margin-bottom: 30px;
+}
+
+.heading p {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.5em;
+  padding: 0px 10px;
+}
+
+/* about */
+.about-content {
+  display: flex;
+  height: 70vh;
+  align-items: center;
+}
+
+.about-content>div {
+  padding: 30px;
+}
+
+.desc {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.desc h2 {
+  font-weight: bold;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.desc p {
+  font-size: 16px;
+  line-height: 1.7em;
+}
+
+.desc a {
+  font-weight: bold;
+  color: rgb(206, 44, 44);
+}
+
+.desc a:hover {
+  text-decoration: underline;
+}
+
+.image {
+  flex: 2;
+  padding: 0 20px;
+}
+
+.image img {
+  width: 100%;
+  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+}
+
+/* ranking */
+.ranking {
+  background-color: #eee;
+}
+
+.ranking-content {
+  padding: 100px;
+}
+
+.content-header {
+  width: 100%;
+  margin: 20px;
+}
+
+.content-header h1 {
+  font-weight: 500;
+}
+
+.list {
+  display: flex;
+}
+
+.list .rankinglist {
+  border-radius: 30px 0px;
+  box-shadow: 0px 10px 10px #00000041;
+  width: 390px;
+  height: 620px;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.bast1 {}
+
+.bast2 {}
+
+.bast3 {}
+
+/* 이미지 자체에는 사이즈를 픽스를 안시킴
+    부모에 따라 유동적으로 바꿀수 있게 해준다.
+*/
+/* 100% 사용하려면 자기자신의 부모의 heigth 값이 있어야한다. */
+.bast1 img {
+  width: 100%;
+}
+
+.bast2 img {
+  width: 100%;
+}
+
+.bast3 img {
+  width: 100%;
+}
+
+
+.rankinglist .text {
+  padding: 30px;
+}
+
+.text.good button {
+  color: #eee;
+  background-color: blue;
+  border-radius: 5px;
+}
+
+.text.must button {
+  color: #eee;
+  background-color: red;
+}
+
+.text h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.text p {}
+
+.text a {
+  color: crimson;
+}
+
+.text a img {
+  transition: 0.5s;
+}
+
+.text a:hover img {
+  transform: translateX(10px);
+}
+
+/* testimanial */
+.testimonial {
+  padding: 100px 0;
+}
+
+.testimonial-heading {}
+
+.testimonial-heading .title {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.testimonial-heading .title span {
+  font-weight: 500;
+}
+
+.testimonial-heading .title hr {
+  border: none;
+  background-color: royalblue;
+  height: 4px;
+  width: 120px;
+  margin: 30px auto;
+}
+
+.testimonial-heading .list {}
+
+.testimonial-heading .list .item {
+  text-align: center;
+}
+
+.item .item-client {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-client .photo {
+  border-radius: 100px;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+}
+
+.item-client .item-names {
+  margin-left: 10px;
+}
+
+.item-names h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.item-names p {}
+
+.item .detail {
+  padding: 10px;
+}
+
+.detail p {}
+
+
+
+/* callaction */
+.callaction {
+  margin: auto;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('./images/callaction-01.jpg') no-repeat center;
+  background-size: cover;
+  /* 가상 선택자의 부모 */
+  position: relative;
+}
+
+/* 가상 선택자를 사용할때 1. content:'', before 인라인요소 포지션을 주면 인라인 블록으로 바뀜 */
+.callaction::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: palegreen;
+  background: linear-gradient(to right bottom, rgba(128, 0, 128, 0.37), rgba(255, 255, 0, 0.269));
+}
+
+/* position => 레이아웃을 겹치는것 : absolute 보다 relative 가 우선순위 */
+.callaction-heading {
+  text-align: center;
+  /* position: relative; */
+  z-index: 100;
+}
+
+.callaction-heading h2 {
+  color: #eee;
+  font-size: 30px;
+  margin-bottom: 30px;
+  line-height: 1.5em;
+  letter-spacing: -1px;
+}
+
+.callaction-heading h2 span {
+  font-weight: 500;
+}
+
+.callaction-heading a {
+  background-color: rgb(62, 192, 64);
+  color: #eee;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+/* festival */
+.festival {
+  margin: auto;
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(67, 60, 60, 0.881);
+}
+
+.festival-heading {
+  flex: 1;
+  text-align: center;
+}
+
+.festival-heading h3 {
+  color: #eee;
+  font-size: 28px;
+  padding: 30px;
+}
+
+.festival-heading h3 span {
+  font-weight: 500;
+}
+
+.festival-heading .bnts {}
+
+.bnts a {
+  display: inline-block;
+  width: 200px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.bnts a:nth-child(1) {
+  background-color: gold;
+  color: white;
+}
+
+.bnts a:nth-child(2) {
+  background-color: #eee;
+}
+
+/* footer */
+footer {
+  background-color: black;
+}
+
+.footer-content {
+  display: flex;
+  padding: 20px;
+}
+
+.footer-content ul {
+  text-align: center;
+  color: #eee;
+}
+
+.footer-content ul li {
+  color: #eeeeee70;
+}
+
+.footer-content ul li a {
+  color: #eeeeee70;
+}
+
+.community {
+  flex: 1;
+}
+
+.community li:first-child {
+  color: white;
+}
+
+.network {
+  flex: 1;
+}
+
+.network li:first-child {
+  color: white;
+}
+
+.help {
+  flex: 2;
+}
+
+.help li:first-child {
+  color: white;
+}
+
+.help li:last-child {
+  color: white;
+  margin: 30px
+}
+
+#btn-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  font-size: 30px;
+  color: #eee;
+  padding: 20px 20px;
+  background-color: crimson;
+  border-radius: 50px;
+}

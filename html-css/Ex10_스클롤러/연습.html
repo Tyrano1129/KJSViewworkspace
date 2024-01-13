@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <title>Document</title>
+  <style>
+    @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+    body {
+      margin: 0;
+      height: 100vh;
+    }
+
+    .container {
+      height: 100%;
+    }
+
+    header {
+      color: #fff;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      font-size: 20px;
+      top: 0;
+      left: 0;
+    }
+
+    .lnb-inner,
+    .gnb-inner {
+      transition: 0.5s;
+    }
+
+    header.active .lnb-inner {
+      height: 0;
+    }
+
+    header.active .gnb-inner {
+      background-color: #fff;
+      color: black;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.358);
+    }
+
+
+    header .lnb-inner {
+      background-color: crimson;
+      height: 50px;
+      line-height: 50px;
+    }
+
+    header .gnb-inner {
+      background-color: black;
+      height: 80px;
+      line-height: 80px;
+    }
+
+    section {}
+
+    section p {
+      color: #ddd;
+      font-size: 3em;
+      line-height: 1em;
+    }
+
+    .btn-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      font-size: 30px;
+      background-color: crimson;
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+      text-align: center;
+      line-height: 50px;
+      color: #fff;
+      opacity: 0;
+      transition: 0.5s;
+    }
+
+    .btn-top.active {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="lnb-inner">LNB inner</div>
+      <div class="gnb-inner">GNB inner</div>
+    </header>
+    <section>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae blanditiis tempora quia autem quisquam
+        porro impedit, laudantium nam veniam at neque dolores distinctio aliquid repellendus ducimus voluptate quidem
+        debitis. Et, quidem reiciendis sit voluptatem fugit laborum doloremque facilis eius! Iure aut aperiam quam enim
+        dolorum porro corrupti quaerat repellendus doloremque, distinctio harum commodi possimus voluptates quis
+        corporis sed nisi nihil vitae dignissimos doloribus quos! Nesciunt excepturi nostrum maiores ipsam enim? A
+        quisquam iure, quae nam reprehenderit provident repudiandae saepe beatae doloribus, assumenda aliquam aut enim
+        deserunt doloremque. At quod itaque officia corrupti necessitatibus consequatur quidem incidunt, voluptate
+        perferendis? Cum blanditiis in, dignissimos, vitae rem necessitatibus nemo molestias quasi illo minima
+        similique, facilis at tenetur iure dolorum quidem amet! Sed vel accusantium autem est natus nisi obcaecati
+        dolores consequuntur ullam, molestias aut atque odit aperiam dolore voluptatibus velit quod necessitatibus
+        magnam accusamus. Dignissimos natus laborum praesentium in nam unde provident vero culpa libero assumenda nihil
+        quisquam minima saepe quam iste rerum odio, labore consequuntur explicabo porro amet. Distinctio placeat nostrum
+        ullam exercitationem dignissimos officia sit. Cum, optio quos? Adipisci in deserunt ipsam sed quaerat culpa
+        dolorum nemo, magni beatae, assumenda distinctio cupiditate sequi ratione nam voluptas nisi totam, possimus sunt
+        accusamus!</p>
+    </section>
+  </div>
+  <a href="#" class="btn-top"><i class="fa fa-arrow-up"></i></a>
+</body>
+
+</html>
+<script>
+  $(window).scroll(
+    function () {
+      if ($(this).scrollTop() > 50) {
+        $('header, .btn-top').addClass('active');
+      } else {
+        $('header, .btn-top').removeClass('active');
+      }
+    }
+  );
+</script>

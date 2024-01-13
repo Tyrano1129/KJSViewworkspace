@@ -1,0 +1,133 @@
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+/* reset CSS */
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{margin: 0;}
+button{cursor: pointer; outline: none;}
+body{
+  margin: 0;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+input,textarea,button{
+  font-family: 'Montserrat', sans-serif;
+}
+header{
+  height: 60px;
+  background-color: blueviolet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav{
+  width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.logo{
+  display: flex;
+}
+.logo img{
+  filter: invert();
+  width: 100%;
+  height: 40px;
+}
+.gub{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gub a{
+  text-align: center;
+  color: white;
+  padding: 8px;
+}
+.sns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sns a{
+  color: white;
+  text-align: center;
+  padding: 8px;
+}
+.gub a:hover, .sns i:hover{
+  color: bisque;
+}
+@media(max-width:786px){
+  header{
+    height: auto;
+  }
+  nav{
+    width: 100%;
+    flex-direction: column;
+  }
+  /* 처음에는 gub, sns가 보이지 않는다.  */
+  .gub, .sns{
+    display: none;
+  }
+  /* 버튼을 클릭했을때 .gub, .sns 클래스 태그에 .on 붙여주기 */
+  /* 다시 보이게 하는 작업 */
+  .gub.on, .sns.on{
+    display: flex;
+  }
+  .logo{
+    width: 100%;
+  }
+  .logo img{
+    width: 100px;
+    padding: 10px;
+  }
+  .gub{
+    width: 100%;
+    flex-direction: column;
+  }
+  .sns{
+    width: 100%;
+    background-color: pink;
+    padding: 10px;
+  }
+
+  .trigger{
+    width: 25px;
+    height: 15px;
+    /* 자동으로 블록요소로 변경됨 */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .trigger span{
+    background-color: pink;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+
+    transition: 0.3s;
+  }
+  .trigger span:nth-child(1){
+    top: 0;
+  }
+  .trigger span:nth-child(2){
+    top: 50%;
+  }
+  .trigger span:nth-child(3){
+    top: 100%;
+  }
+  .trigger.active span:nth-child(1){
+    transform: rotate(45deg);
+    top: 50%;
+  }
+  .trigger.active span:nth-child(2){
+    /* top: 50%; */
+    /* 투명도를 0으로 해준것 */
+    opacity: 0;
+  }
+  .trigger.active span:nth-child(3){
+    transform: rotate(-45deg);
+    top: 50%;
+  }
+}

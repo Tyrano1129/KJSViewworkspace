@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    body{
+      margin: 0;
+      height: 100vh;
+    }
+
+    .container{
+      height: 100%;
+      border: 3px solid black;
+      display: flex;
+    }
+    .text{
+      flex: 5;
+      display: flex;
+      flex-direction: column;
+    }
+    header{
+      height: 100px;
+      background-color: aqua;
+    }
+    nav{
+      display: flex;
+      width: 100px;
+      background-color: pink;
+    }
+    main{
+      flex: 1;
+      display: flex;
+    }
+    main article{
+      flex: 1;
+      background-color: aquamarine;
+    }
+    main aside{
+      width: 80px;
+      background-color: beige;
+    }
+    footer{
+      height: 100px;
+      background-color: bisque;
+    }
+    nav,header,article,aside,footer{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <nav>Nav</nav>
+  <div class="text">
+    <header>Header</header>
+    <main>
+      <article>Article</article>
+      <aside>Aside</aside>
+    </main>
+    <footer>footer</footer>
+  </div>
+</div>
+</body>
+</html>

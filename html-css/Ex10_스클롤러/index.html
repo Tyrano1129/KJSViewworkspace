@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <title>Document</title>
+  <style>
+    @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+    body {
+      margin: 0;
+      height: 100vh;
+    }
+
+    .container {
+      height: 100%;
+    }
+
+    header {
+      text-align: center;
+      color: #fff;
+      font-size: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .lnb-inner,
+    .gnb-inner {
+      transition: 0.5s;
+    }
+
+    header.active .lnb-inner {
+      height: 0;
+    }
+
+    header.active .gnb-inner {
+      background-color: #fff;
+      color: black;
+      box-shadow: 0 3px 3px #00000063;
+    }
+
+    .lnb-inner {
+      background-color: crimson;
+      height: 30px;
+      line-height: 30px;
+    }
+
+    .gnb-inner {
+      background-color: black;
+      height: 80px;
+      line-height: 80px;
+    }
+
+    section {}
+
+    section p {
+      color: #ddd;
+      font-size: 3em;
+      line-height: 1em;
+    }
+
+    .btn-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      font-size: 30px;
+      background-color: crimson;
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 50px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: 0.5s;
+    }
+
+    .btn-top.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="lnb-inner"> LAN inner </div>
+      <div class="gnb-inner"> GNB inner </div>
+    </header>
+    <section>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit vero, cum ratione maxime possimus temporibus ipsam
+        repudiandae praesentium ducimus dolor molestiae voluptatum, voluptas error eius. Exercitationem ut mollitia
+        accusamus provident quam velit! Tempore veniam autem sunt ea architecto labore quaerat at magnam itaque delectus
+        modi iusto id dolores minus quidem hic consequatur, ab nulla voluptatibus impedit earum! Eius ducimus asperiores
+        odio quibusdam aut officiis sapiente, quidem harum corporis architecto sint porro eos laborum dicta, qui quo
+        enim quas. Quas, repudiandae laborum fuga facilis reprehenderit eligendi velit molestias quam doloribus quasi
+        pariatur a, quia quidem libero veniam et aliquid illum alias? Dolore laudantium corporis, rerum a laborum quas
+        itaque optio minus. Iste minima atque debitis at repellendus ipsa exercitationem optio et, delectus quisquam
+        fugit asperiores recusandae ducimus, incidunt dolor dolorum, officiis voluptatibus! Eum eligendi qui, aspernatur
+        ratione velit sunt in fugit cumque quis itaque omnis aliquid repellat ipsam a rerum dolor quibusdam ab
+        voluptatem quaerat. Quidem architecto vitae nulla fugiat velit dolorem sunt, accusantium mollitia excepturi
+        eveniet non, eos recusandae quis tempore dolor consequatur nesciunt, tenetur doloribus ad soluta iusto molestiae
+        nisi earum. Autem, amet aperiam enim beatae est molestiae harum fugit unde eveniet a, voluptatibus eum ipsam rem
+        sit porro!</p>
+    </section>
+  </div>
+  <a href="#" class="btn-top"><i class="fa fa-arrow-up"></i></a>
+</body>
+
+</html>
+<script>
+  // 스크롤를 내리면(윈도우 == 브라우저) 어떤 반응을 하고싶다. => 윈도우 객체를 가지고 와야한다
+  $(window).scroll(
+    function () {
+      // 화면의 위쪽으로 기준으로 값을 가져오는 애 50보다 크다 => 스크롤을 조금이라도 내렸다.
+      if ($(this).scrollTop() > 50) {
+        $('header , .btn-top').addClass('active');
+      } else {
+        // 가장위인 상태
+        $('header, .btn-top').removeClass('active');
+      }
+    }
+  );
+</script>

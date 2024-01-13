@@ -1,0 +1,61 @@
+@media(max-width:768px) {
+
+  /* wdith 고정 ==> 100% */
+  /* row -> calumn */
+  header {
+    width: 100%;
+  }
+
+  .banner {
+    height: 0;
+    visibility: hidden;
+  }
+
+  nav {
+    margin: 20px;
+  }
+
+  .inner {
+    width: 100%;
+  }
+
+  .intro {
+    height: 100%;
+  }
+
+  .about-content {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .list {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  .list .rankinglist {
+    width: 100%;
+    height: 100%;
+  }
+
+  .festival {
+    flex-direction: column;
+  }
+
+  .festival-heading {}
+
+  .bnts a {
+    display: block;
+    width: 50%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-content ul {
+    margin: 10px;
+  }
+
+}
