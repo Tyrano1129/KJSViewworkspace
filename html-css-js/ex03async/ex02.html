@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button></button>
+  </body>
+</html>
+<script>
+  // setTimeout(콜백함수 , 초(millsec) // 1 * 1000 => 1000 => 1초;
+  let cnt = 0;
+  const btns = document.querySelector("button");
+  let sayHi = () => {
+    console.log("sayHi", ++cnt);
+  };
+  // sayHi();
+  // sayHi();
+  // sayHi();
+  // sayHi();
+  const interval = setInterval(sayHi, 1000);
+  btns.addEventListener("click", () => {
+    setTimeout(() => {
+      console.log("10초 뒤에 실행했다.");
+      clearInterval(interval);
+    }, 10 * 1000);
+  });
+</script>

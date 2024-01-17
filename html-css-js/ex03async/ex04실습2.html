@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <!-- 0.05 => 마다 한번씩 cnt 증가되요, 50 -->
+    <button class="btn1">1초 뒤에 초기화 다시시작</button>
+    <button class="btn1">완전 종료</button>
+  </body>
+</html>
+<script>
+  const btns = document.querySelectorAll(".btn1");
+  let cnt = 0;
+  let check = true; // flag 변수
+  let interval = setInterval(() => {
+    ++cnt;
+    document.querySelector("h1").textContent = cnt;
+  }, 50);
+  btns[0].addEventListener("click", () => {
+    if (!check) return;
+    clearInterval(interval);
+    check = false;
+    // 버튼을 다시 클릭하지 못하게
+    setTimeout(() => {
+      clearInterval(interval);
+      cnt = 0;
+      interval = setInterval(() => {
+        ++cnt;
+        document.querySelector("h1").textContent = cnt;
+      }, 50);
+      check = true;
+    }, 1000);
+  });
+  btns[1].addEventListener("click", () => {
+    clearInterval(interval);
+  });
+</script>

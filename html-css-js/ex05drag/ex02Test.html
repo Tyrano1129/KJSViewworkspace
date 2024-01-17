@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        border: none;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+      }
+      input {
+        width: 40px;
+        height: 20px;
+      }
+      .box {
+        border: 1px solid black;
+        width: 40px;
+        height: 40px;
+        margin: 3px;
+        text-align: center;
+        line-height: 40px;
+      }
+      .trash {
+        width: 300px;
+        border: 1px solid black;
+        height: 100px;
+        margin: 10px;
+      }
+      .on {
+        background-color: red;
+        color: white;
+      }
+      .dr {
+        background-color: green;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <input type="text" id="text" />
+    <div class="trash"></div>
+  </body>
+</html>
+<script>
+  const container = document.querySelector(".container");
+  const box = [...document.querySelectorAll(".box")];
+  const input = document.querySelector("input");
+  const trash = document.querySelector(".trash");
+  let cnt = 1;
+
+  container.addEventListener("click", (e) => {
+    if (e.target.innerText) return;
+    e.target.innerText = cnt++;
+  });
+  // box 마다 추가
+  box.forEach((box) => {
+    box.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      box.classList.add("dr");
+    });
+    box.addEventListener("dragend", () => {
+      box.classList.remove("dr");
+    });
+  });
+  // 엔터 삭제
+  function inputDown(e) {
+    if (e.isComposing) return;
+    if (e.code === "Enter") {
+      box.forEach((box) => {
+        if (input.value === box.innerHTML) {
+          box.innerHTML = "";
+        }
+      });
+      input.value = "";
+      input.focus();
+    }
+  }
+  //입력 받았을때 같은값 색변환
+  function inputUp() {
+    box.forEach((box) => {
+      // inputvalue 값이랑 같거나 빈공간이 아닐때
+      if (input.value === box.innerHTML && input.value.trim()) {
+        box.classList.add("on");
+      } else {
+        box.classList.remove("on");
+      }
+    });
+  }
+
+  input.addEventListener("keyup", () => {
+    inputUp();
+  });
+  input.addEventListener("keydown", (e) => {
+    inputDown(e);
+  });
+  // 쓰레기통
+  trash.addEventListener("dragover", (e) => {
+    e.preventDefault();
+  });
+  trash.addEventListener("drop", () => {
+    let getbox = box.find((box) => box.classList.contains("dr"));
+    if (getbox.innerHTML === "") return;
+    getbox && getbox.remove();
+  });
+</script>

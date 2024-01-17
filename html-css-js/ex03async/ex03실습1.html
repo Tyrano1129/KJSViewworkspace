@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <button>중지</button>
+  </body>
+</html>
+<script>
+  const btns = document.querySelector("button");
+  let cnt = 0;
+  let isCheck = true;
+  let sayHi = () => {
+    const head = document.querySelector("h1");
+    ++cnt;
+    head.textContent = `${cnt} sayHi~~~~`;
+  };
+
+  let interval = setInterval(sayHi, 50);
+  btns.addEventListener("click", () => {
+    if (isCheck) {
+      clearInterval(interval);
+      isCheck = !isCheck;
+      btns.textContent = "시작";
+    } else {
+      cnt = 0;
+      interval = setInterval(sayHi, 50);
+      isCheck = !isCheck;
+      btns.textContent = "중지";
+    }
+  });
+</script>

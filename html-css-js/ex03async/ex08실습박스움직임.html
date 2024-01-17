@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        background-color: blue;
+        width: 50px;
+        height: 50px;
+        margin: 5px 0;
+        position: relative;
+      }
+      .testbox {
+        /* position: absolute; */
+        background-color: pink;
+        /* animation: dropbox 1s ease-in 3; */
+      }
+      /* @keyframes dropbox{
+        from{
+          top: 0px
+        }
+        to{ 
+          top: 500px;
+        }
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box testbox"></div>
+  </body>
+</html>
+<script>
+  const box = Array.from(document.querySelectorAll(".box"));
+
+  function move(box, endpoint) {
+    let max = 0;
+    function draw() {
+      max++;
+      box.style.left = `${max}px`;
+      if (max === endpoint) {
+        clearInterval(timer);
+      }
+    }
+    let timer = setInterval(draw, 1);
+  }
+  box.forEach((box) => {
+    box.addEventListener("click", () => {
+      move(box, 300);
+    });
+  });
+  const testBox = document.querySelector(".testbox");
+  testBox.addEventListener("click", () => {
+    testBox.style.position = "absolute";
+    testBox.animate(
+      { top: ["0px", "500px"] },
+      {
+        duration: 500,
+        easing: "ease-in",
+        iterations: 1, //infinity or a number
+      }
+    );
+  });
+</script>
